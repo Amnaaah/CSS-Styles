@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>Flip Card</title>
+  <style>
+    body 
+    {
+      background-color: black;
+      font-family: 'Fira Sans', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      color: cornsilk;
+    }
+
+    .wrapper 
+    {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 80rem;
+    }
+
+    h1 
+    {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .cols 
+    {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card 
+    {
+      width: 280px;
+      height: 350px;
+      perspective: 1000px; 
+    }
+
+    .card-inner 
+    {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d; 
+    }
+
+    .card:hover .card-inner 
+    {
+      transform: rotateY(180deg); /* Flip effect */
+    }
+
+    .front, .back 
+    {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .overlay-text 
+    {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: cornsilk;
+      z-index: 1;
+    }
+
+    .back 
+    {
+      background-image: url('bluebg.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: rotateY(180deg); 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .front video 
+    {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Flip Card Animation</h1>
+    <div class="cols">
+      <div class="card">
+        <div class="card-inner">
+          <!-- FRONT -->
+          <div class="front">
+            <video autoplay muted loop playsinline>
+              <source src="jellyfishvid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="overlay-text">Jellyfish</div>
+          </div>
+          <!-- BACK -->
+          <div class="back">
+            <p>Jellyfish are soft-bodied, free-swimming marine animals with tentacles. Despite their name, they aren't actually fish and have been drifting through the oceans for over 500 million years.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
