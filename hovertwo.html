@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       <title>Moving up text</title>
+    <style>
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        }
+        body {
+        background:black;
+        padding: 40px;
+        display: flex;
+        justify-content: center;
+        }
+        .gallery {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+        .card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        transition: transform 0.4s ease;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        width: 280px;
+        height: 180px;
+        }
+        .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        }
+        .card .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        }
+        .card:hover {
+        transform: scale(1.05);
+        }
+        .card:hover img {
+        transform: scale(1.1);
+        }
+        .card:hover .overlay {
+        opacity: 1;
+        }
+        .overlay h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+        }
+        .overlay p {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        }
+
+    </style>
+    </head>
+<body>
+    <div class="gallery">
+        <div class="card">
+          <img src="urban.jpg" alt="Neon Pulse City image" />
+          <div class="overlay">
+            <h3>Neon Pulse</h3>
+            <p>Lights flicker where silence once lived.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="rural.jpg" alt="Village image" />
+          <div class="overlay">
+            <h3>Village</h3>
+            <p>Peaceful paths and timeless charm.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="city.jpg" alt="City Imagec" />
+          <div class="overlay">
+            <h3>City Life</h3>
+            <p>Endless lights, endless stories.</p>
+          </div>
+        </div>
+      </div>
+</body>
+  </html>
+  
+  
